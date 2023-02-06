@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
+
 <style>
     .personal {
         display: flex;
@@ -17,15 +18,24 @@
         /* flex-direction: row; */
     }
 
+    .personal ul {
+        margin: 0 0 0 0;
+        padding: 20px 20px 20px 20px;
+        width: 50%;
+        height: 50%;
+    }
+
     .break {
         flex-basis: 100%;
         justify-content: center;
     }
 
     .personal img {
-        border-radius: 10px;
-        width: 250px;
-        height: 250px;
+        width: 20%;
+        height: 20%;
+        align-self: center;
+        padding: 0 0 0 0;
+        margin: 20px 20px 20px 20px;
     }
 
     .charac {
@@ -39,53 +49,94 @@
         left: 2%;
     }
 
-    .maximus {
-        display: inline-block;
-        margin: 10px;
-        overflow: auto;
-        border: solid 5px black;
-    }
-
-    .maximus ul {
-        width: 300px;
-        height: 300px;
-    }
-
-    .maximus img {
-        width: 150px;
-        height: 150px;
-        /* align-self: center; */
-        vertical-align: middle;
-    }
-
-    /* .pascal {
-        display: flex;
-    } */
-
-    .pascal img {
-        width: 150px;
-        height: 150px;
-        align-self: center;
-    }
-
-    /* .support {
-        display: flex;
-        justify-content: space-around;
-    } */
-
     .disney {
         display: flex;
         justify-content: space-around;
     }
 
-    .disney img {
+    .photo-bg {
         width: 450px;
         height: 450px;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .Card {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    .card-img {
+        width: 150px;
+        height: 150px;
+        align-items: center;
+    }
+
+    @media (max-width:768px) {
+        body h4 {
+            font-size: 2.5vw;
+        }
+
+        body p {
+            font-size: 1.6vw;
+        }
+
+        .personal {
+            flex-direction: column;
+            justify-items: center;
+        }
+
+        .personal img {
+            width: 30%;
+            height: 30%;
+            order: -1;
+        }
+
+        .personal ul {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0 0 0 0;
+            width: 80%;
+            height: 80%;
+        }
+
+        .card-img {
+            width: 90px;
+            height: 90px;
+        }
+
+        .card-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo-bg {
+            width: 300px;
+            height: 300px;
+            align-self: center;
+        }
+
+        .disney {
+            flex-direction: column;
+            justify-items: center;
+        }
+
+        .about-disney {
+            margin-left: 24px;
+            margin-right: 24px;
+        }
+
     }
 </style>
 
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #FFD4D4;">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #FFD4D4;">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold" href="#">
                 <img src="https://lumiere-a.akamaihd.net/v1/images/princess_upcportalreskin_crown_rapunzel_20694_7084700f.png"
@@ -120,98 +171,101 @@
 </header>
 
 <body class="font-monospace" style="background-color: #FFFFE8;">
+    <!--home-->
     <img src="https://lumiere-a.akamaihd.net/v1/images/pp_princess_rapunzel_1188_23cb57f6.jpeg?region=0%2C0%2C2048%2C878"
         class="img-fluid" alt="Responsive image">
 
+    <!--about-->
     <div id="about">
-        <h4 class="fw-bold text-center mt-2">Rapunzel</h4>
-        <p class="mx-5">
+        <h4 class="fw-bold text-center mt-5">Rapunzel</h4>
+        <p class="mx-5 my-1">
             Rapunzel is a spirited and determined young woman, with a strong sense of curiosity about the world, and a
-            willingness to step outside of her comfort zone to experience her dream. Despite not knowing the world
+            willingness to step outside of her comfort zone to experience her dream.
+            Despite not knowing the world
             beyond her tower, she finds the courage to push herself forward and pursue her ambitions, discovering new
             friends and her true self in the process.
         </p>
     </div>
 
+    <!--personality-->
     <div id="personality" class="personal my-1">
-        <ul class="w-50 h-50 align-self-center">
+        <div class="align-self-center w-50 h-50">
             <h4 class="fw-bold text-center">Which personality type is Rapunzel?</h4>
-
-            <p>
-                Rapunzel is an ENFP personality type. She is warm and outgoing, but she has a deeper side too that isn’t
+            <p class="text-left">
+                Rapunzel is an ENFP personality type. She is warm and outgoing,
+                but she has a deeper side too that isn’t
                 always obvious at first.
             </p>
 
-        </ul>
+        </div>
         <img src="https://lumiere-a.akamaihd.net/v1/images/5c239685ecbea2c12fcb8ee661a04d0a9098e141.jpeg?region=0%2C0%2C600%2C600"
-            alt="">
-        <ul class="break w-50 h-50 align-self-center">
+            alt="" class="rounded-3">
+        <div class="break align-self-center mx-4">
             <h4 class="fw-bold text-center">What are Rapunzel’s best personality matches?</h4>
 
-            <p>
+            <p class="mb-5">
                 As an ENFP personality type, Rapunzel’s best matches are INTJ and INFJ.
-                <br>
                 On So Syncd, these personality matches are considered ‘golden pairs’ because they have just the right
                 amount
                 of similarities to understand each other and just the right amount of differences to create that spark.
             </p>
-        </ul>
+        </div>
     </div>
 
-    <div id="character">
-        <div class="charac">
-            <img src="https://lumiere-a.akamaihd.net/v1/images/characterhero_tangled_flynn_05451adb.jpeg"
-                class="img-fluid" alt="">
-            <div class="flynn w-50 h-50">
-                <h4 class="fw-bold text-center">Flynn Rider</h4>
-                <p class="text-center">
-                    A swashbuckler known for his charm and quick-wit, Flynn made a name for himself as a notorious
-                    thief. In a turn of events following years of travel and plunder, however, he experienced a change
-                    of heart upon falling in love with Rapunzel, the lost princess of Corona.
+    <!--Character-->
+    <div class="charac p-0 m-0 pb-2" id="character">
+        <img src="https://lumiere-a.akamaihd.net/v1/images/characterhero_tangled_flynn_05451adb.jpeg" class="img-fluid"
+            alt="">
+        <div class="flynn w-50 h-50">
+            <h4 class="fw-bold text-center">Flynn Rider</h4>
+            <p class="text-center">
+                A swashbuckler known for his charm and quick-wit, Flynn made a name for himself as a notorious
+                thief. In a turn of events following years of travel and plunder, however, he experienced a change
+                of heart upon falling in love with Rapunzel, the lost princess of Corona.
+            </p>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="Card mx-3">
+            <div class="">
+                <h4 class="fw-bold text-center">Maximus</h4>
+                <p>
+                    Maximus is a supporting character in Disney's 2010 animated feature film, Tangled. He is a
+                    palace
+                    horse
+                    belonging to the captain of the Corona Royal Guard. When the crown of Princess Rapunzel was
+                    stolen
+                    by
+                    the notorious thief, Flynn Rider, Maximus embarked on a mission to apprehend the criminal.
                 </p>
             </div>
-        </div>
-
-        <div class="support">
-
-            <div class="maximus">
-                <ul>
-                    <h4 class="fw-bold text-center">Maximus</h4>
-                    <p>
-                        Maximus is a supporting character in Disney's 2010 animated feature film, Tangled. He is a
-                        palace
-                        horse
-                        belonging to the captain of the Corona Royal Guard. When the crown of Princess Rapunzel was
-                        stolen
-                        by
-                        the notorious thief, Flynn Rider, Maximus embarked on a mission to apprehend the criminal.
-                    </p>
-                </ul>
-            </div>
-            <div class="maximus">
+            <ul>
                 <img src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-1o2ismj_2c27d949.jpeg?region=0,0,600,600&width=160"
-                    class="rounded-3">
+                    class="card-img rounded-3">
+            </ul>
+        </div>
+        <div class="Card mx-3">
+            <div class="">
+                <h4 class="fw-bold text-center">Pascal</h4>
+                <p>
+                    Pascal is a major character in Disney's 2010 animated feature film, Tangled. He is Rapunzel's
+                    pet
+                    chameleon, with the ability to change colors as both a means of camouflage and expression. With
+                    a
+                    feisty personality, Pascal acts as Rapunzel’s confidant and self-appointed protector.
+                </p>
             </div>
-
-            <div class="pascal">
-                <div class="w-50 h-50">
-                    <h4 class="fw-bold text-center">Pascal</h4>
-                    <p>
-                        Pascal is a major character in Disney's 2010 animated feature film, Tangled. He is Rapunzel's
-                        pet
-                        chameleon, with the ability to change colors as both a means of camouflage and expression. With
-                        a
-                        feisty personality, Pascal acts as Rapunzel’s confidant and self-appointed protector.
-                    </p>
-                </div>
+            <ul>
                 <img src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-10txx60_f3574e9e.jpeg?region=0,0,600,600&width=160"
-                    class="rounded-3 mx-2">
-            </div>
+                    class="card-img rounded-3">
+            </ul>
         </div>
     </div>
 
+    <!--Disney-->
     <div class="disney" id="disney">
-        <ul class="align-self-center">
+        <div class="about-disney text-rel align-self-center ms-4">
             <h4 class="fw-bold text-center">About Disney</h4>
             <p>
                 The mission of The Walt Disney Company is to entertain, inform and inspire people around the globe
@@ -219,10 +273,8 @@
                 the power of unparalleled storytelling, reflecting the iconic brands, creative minds and innovative
                 technologies that make ours the world’s premier entertainment company.
             </p>
-        </ul>
-        <ul>
-            <img src="https://i.pinimg.com/originals/c4/59/fe/c459fe19440b2e1c657c421b42324876.png" class="image-fluid">
-        </ul>
+        </div>
+        <img src="https://i.pinimg.com/originals/c4/59/fe/c459fe19440b2e1c657c421b42324876.png" class="photo-bg">
     </div>
 
 </body>
