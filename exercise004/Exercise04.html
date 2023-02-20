@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div id="maincontainer"></div>
+
+    <script>
+        const maincontainer = document.getElementById('maincontainer');
+
+        // head
+        const h2 = document.createElement('h2');
+        h2.textContent = "Exercise 04: JavaScript&DOM";
+        maincontainer.appendChild(h2);
+
+        //btn
+        const btn = document.createElement('button')
+        btn.innerHTML = "Click me to diaplay Date and Time";
+        btn.addEventListener("click", function () {
+            alert("Button is clicked");
+        });
+        btn.style.cursor = "pointer";
+        maincontainer.appendChild(btn);
+
+        //personalInfo
+        const personalcontainer = document.createElement('div')
+        const personalTopic = document.createElement('p')
+        const ul = document.createElement('ul')
+
+        let lstinfo = ["Kanokporn Supapon, ID: 64010002", "Web Application Development", "Semester 2"]
+
+        personalTopic.textContent = "Personal Info";
+        let css;
+        firstcolor();
+
+        maincontainer.appendChild(personalcontainer)
+        personalcontainer.append(personalTopic, ul)
+
+        for (let i = 0; i < 3; i++) {
+            const li = document.createElement('li');
+            const span = document.createElement('span');
+            span.textContent = lstinfo[i];
+            ul.appendChild(li);
+            li.appendChild(span);
+        }
+
+        ul.style.display = 'none';
+
+        personalTopic.addEventListener("click", toggleinfo);
+        personalTopic.addEventListener("mouseover", secondcolor);
+        personalTopic.addEventListener("mouseout", firstcolor);
+
+        function toggleinfo() {
+            if (ul.style.display === "none") {
+                ul.style.display = "block";
+            } else {
+                ul.style.display = "none";
+            }
+        };
+
+        function firstcolor() {
+            css = 'color:pink;text-decoration:underline;cursor:pointer;display:inline-block;';
+            personalTopic.style.cssText = css;
+        };
+
+        function secondcolor() {
+            css = "color:blue;text-decoration:underline;cursor:pointer;background-color:yellow;display:inline-block;"
+            personalTopic.style.cssText = css;
+        };
+
+        //Snapshots
+        const snapshotscontainer = document.createElement('div')
+        const h1 = document.createElement('h1')
+        const ulsnap = document.createElement('ul')
+        const img = document.createElement('img')
+        let srcimg = ["https://t3.ftcdn.net/jpg/05/28/98/76/360_F_528987624_WEYtNbrhio0xoPtN92lrCMkt3P704vHG.jpg", "https://i.pinimg.com/originals/a5/e4/7a/a5e47a6d08c9861d4473105a97511c35.png", "https://occ-0-503-3996.1.nflxso.net/dnm/api/v6/oQyw8Fv9eE41UPapt7zHvdUdzrE/AAAABZPlwD9YbfXtr6A_R626w5CfeOxC90aFMPZH_4MKcHZZhxivT9G4ADT2sgDsvf4P3VKTW5OnmizekDb1XLBtVNAtnW59AGLZW5JcZxZvVpEdw6y2XK0vzsEvLKdIBsa1DQc1jw.jpg", "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i3Yp1mXpDIMA/v2/1200x-1.jpg"]
+        let lstsnap = ["Fireworks", "Crest", "Action", "Buffalo"]
+
+        maincontainer.appendChild(snapshotscontainer);
+        snapshotscontainer.append(h1, ulsnap);
+        h1.style.marginTop = "0px";
+
+        h1.textContent = "Snapshots"
+        for (let i = 0; i < 4; i++) {
+
+            const li = document.createElement('li');
+            const span = document.createElement('span');
+            span.textContent = lstsnap[i];
+            ulsnap.appendChild(li);
+            li.appendChild(span);
+            span.style.cssText = 'text-decoration:underline;color:blue;cursor:pointer;';
+            span.onclick = function changeimg() { img.src = srcimg[i]; };
+        }
+        snapshotscontainer.appendChild(img)
+        img.src = 'https://www.kmitl.ac.th/sites/default/files/2021-10/background_FIGHT2565-02.png';
+        img.style.width = '500px';
+
+    </script>
+</body>
+
+</html>

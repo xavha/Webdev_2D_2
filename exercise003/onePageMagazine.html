@@ -11,6 +11,18 @@
 </head>
 
 <style>
+    .anchor {
+        display: block;
+        height: 100px;
+        visibility: hidden;
+    }
+
+    .mini-anchor{
+        display: block;
+        height: 50px;
+        visibility: hidden;
+    }
+
     .personal {
         display: flex;
         flex-wrap: wrap;
@@ -78,6 +90,14 @@
         align-items: center;
     }
 
+    a.nav-link:hover{
+        color: #FFA500;
+    }
+
+    a.nav-link:focus{
+        color: black;
+    }
+
     @media (max-width:768px) {
         body h4 {
             font-size: 2.5vw;
@@ -137,6 +157,7 @@
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #FFD4D4;">
+
         <div class="container-fluid">
             <a class="navbar-brand fw-bold" href="#">
                 <img src="https://lumiere-a.akamaihd.net/v1/images/princess_upcportalreskin_crown_rapunzel_20694_7084700f.png"
@@ -150,7 +171,7 @@
             <div class="collapse navbar-collapse" id="navbarcollapse">
                 <ul class="navbar-nav ms-auto navbar-nav-scroll">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
@@ -172,11 +193,13 @@
 
 <body class="font-monospace" style="background-color: #FFFFE8;">
     <!--home-->
+    <span class="mini-anchor" id="home"></span>
     <img src="https://lumiere-a.akamaihd.net/v1/images/pp_princess_rapunzel_1188_23cb57f6.jpeg?region=0%2C0%2C2048%2C878"
         class="img-fluid" alt="Responsive image">
 
     <!--about-->
-    <div id="about">
+    <span class="anchor" id="about"></span>
+    <div>
         <h4 class="fw-bold text-center mt-5">Rapunzel</h4>
         <p class="mx-5 my-1">
             Rapunzel is a spirited and determined young woman, with a strong sense of curiosity about the world, and a
@@ -188,7 +211,9 @@
     </div>
 
     <!--personality-->
-    <div id="personality" class="personal my-1">
+    <span class="anchor" id="personality"></span>
+
+    <div class="personal my-1">
         <div class="align-self-center w-50 h-50">
             <h4 class="fw-bold text-center">Which personality type is Rapunzel?</h4>
             <p class="text-left">
@@ -213,7 +238,9 @@
     </div>
 
     <!--Character-->
-    <div class="charac p-0 m-0 pb-2" id="character">
+    <span class="mini-anchor" id="character"></span>
+
+    <div class="charac p-0 m-0 pb-2">
         <img src="https://lumiere-a.akamaihd.net/v1/images/characterhero_tangled_flynn_05451adb.jpeg" class="img-fluid"
             alt="">
         <div class="flynn w-50 h-50">
@@ -264,7 +291,9 @@
     </div>
 
     <!--Disney-->
-    <div class="disney" id="disney">
+    <span class="anchor" id="disney"></span>
+
+    <div class="disney">
         <div class="about-disney text-rel align-self-center ms-4">
             <h4 class="fw-bold text-center">About Disney</h4>
             <p>
