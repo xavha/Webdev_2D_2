@@ -16,12 +16,40 @@
 
         //btn
         const btn = document.createElement('button')
+        const div = document.createElement('div')
         btn.innerHTML = "Click me to diaplay Date and Time";
-        btn.addEventListener("click", function () {
-            alert("Button is clicked");
-        });
         btn.style.cursor = "pointer";
-        maincontainer.appendChild(btn);
+        maincontainer.appendChild(div);
+        div.appendChild(btn)
+        let cssBtnOnclick = "position:fixed;top:0px;right:0px;";
+        let colorbg = ["Coral", "DarkSeaGreen", "FireBrick", "LightPink", "PowderBlue", "PaleVioletRed"];
+        let colorfont = ["LightYellow", "DarkSlateGray", "FloralWhite", "MidnightBlue", "Black", "BlanchedAlmond"];
+        div.style.height = "30px"
+
+        //web worker
+        let myWorker = null;
+        let i = 0;
+
+        btn.addEventListener("click", function () {
+            if (myWorker == null) {
+                myWorker = new Worker('worker.js');
+
+                myWorker.onmessage = function (event) {
+                    btn.innerHTML = event.data;
+                    btn.style.cssText = cssBtnOnclick;
+                    i = (i + 1) % 6;
+                    btn.style.backgroundColor = colorbg[i];
+                    btn.style.color = colorfont[i];
+                    console.log(i);
+                };
+
+            } else {
+                myWorker.terminate();
+                myWorker = null;
+                console.log('Web worker terminated');
+                btn.style.position = null;
+            }
+        });
 
         //personalInfo
         const personalcontainer = document.createElement('div')
